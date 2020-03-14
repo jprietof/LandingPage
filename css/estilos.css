@@ -1,0 +1,263 @@
+@import "./colores.css";
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, form, footer, header, menu, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/*
+------------- CONFIGURACIÓN GENERAL --------------------
+*/
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--colorTexto);
+}
+h1, h2, h3{
+  font-family:'Staatliches', cursive;
+}
+/*
+------------- HEADER --------------------
+*/
+header{
+  background: var(--fondoCabecera);
+}
+header h1{
+  color: var(--colorTexto-Alterno);
+  text-align: center;
+}
+/*
+------------- BAR NAVIGATION  --------------------
+*/
+nav ul{
+  /*overflow: hidden;*/
+  text-align: center;
+}
+nav ul li{
+  /*float: left;
+  margin: 10px;
+  list-style: none;*/
+  display: inline-block;
+  margin: 2px 6px;
+}
+nav ul li a{
+
+  color: var(--colorTexto-Alterno);
+  text-decoration: none;
+}
+/*
+------------- SECTION PRINCIPAL --------------------
+*/
+.principal{
+  background: url("../images/inicial2.JPG") no-repeat;
+  height: 300px;
+  width: 100%;
+}
+.principal .contenido{
+  background: var(--colorFondo);
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  opacity: 80%;
+  width: 70%;
+  top: 60px;
+  text-align: left;
+}
+.principal .contenido h2{
+  font-size: 1.6em;
+}
+.principal .contenido p{
+  font-size: 1em;
+}
+/*
+------------- CONTENIDO PRINCIPAL --------------------
+*/
+main{
+  text-align: center;
+}
+main > div:nth-child(2){
+  background: var(--colorFondo-uno);
+}
+main > div:nth-child(3){
+  background: var(--colorFondo-dos);
+}
+main > div:nth-child(4){
+  background: var(--colorFondo-tres);
+}
+.descripcion h2{
+  font-size: 2.5em;
+}
+.contenido{
+  padding: 10px 0;
+}
+.contenido .imagen-principal img,.contenido .imagen-secundaria img{
+  width: 50%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/*
+------------- FOOTER --------------------
+*/
+footer{
+  background: var(--colorFondo-cuatro);
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+}
+footer .contacto{
+  background: var(--colorFondo-dos);
+  margin: 20px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+footer .contacto form{
+  width: 90%;
+  margin: 10px auto;
+}
+footer .contacto form input, footer .contacto form textarea{
+  width: 100%;
+}
+/*footer .contacto form p input, footer .contacto form p textarea{
+  width: 300px;
+}*/
+footer .contacto form p button{
+  background: var(--fondoCabecera);
+  color: var(--colorTexto-Alterno);
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  border:none;
+  margin: 10px 0;
+}
+
+/*
+------------- MEDIA QUERIES --------------------
+*/
+@media{
+  .contenido .imagen-principal{
+    display: none;
+  }
+}
+/* --Tablets-- */
+@media(min-width: 768px) and (max-width: 992px){
+  .principal{
+    background-size: cover;
+  }
+  .principal .contenido{
+    width: 50%;
+  }
+  /*Cabecera*/
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  header h1{
+    width: 50%;
+    text-align: right;
+  }
+  header nav{
+    width: 50%;
+  }
+  header nav ul{
+    text-align: left;
+  }
+  /*contenido*/
+ main .lugar .contenido{
+    display: flex;
+    flex-direction: row;
+  }
+  main .lugar .contenido div{
+    width: 50%;
+  }
+  /* pie de página */
+  footer{
+    display: flex;
+    flex-direction: row;
+  }
+  footer > div{
+    width: 49.5%;
+  }
+  footer .contacto{
+    margin: 0;
+  }
+}
+
+/*  --Desktop--  */
+@media (min-width: 992px){
+  .principal{
+    background-size: cover;
+    height: 500px;
+  }
+  .principal .contenido{
+    width: 50%;
+  }
+  .contenido .imagen-principal{
+    display:initial;
+  }
+  /*  barra de navegación*/
+  nav ul li a:hover{
+    text-decoration: underline;
+    color: var(--colorFondo-uno);
+    font-weight: bold;
+  }
+/* bloque principal*/
+  .principal .contenido h2{
+    font-size: 2.6em;
+  }
+  .principal .contenido p{
+    font-size: 1.5em;
+  }
+  /*cebecera*/
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  header h1{
+    padding: 0 10px;
+  }
+  /*contenido*/
+  main .lugar .contenido{
+    display: flex;
+    flex-direction: row;
+  }
+  main .lugar .contenido div{
+    width: 33.33%;
+  }
+  main .descripcion h2{
+    font-size: 4em;
+  }
+  main .descripcion p{
+    font-size: 1.5em;
+  }
+  /* tranformaciones efectos de imaganes */
+  .imagen-principal img:hover , .imagen-secundaria img:hover{
+    /*width: 55%;*/
+    transform: scale(1.1,1.1);
+    filter: saturate(200%);
+  }
+  /*pie de página*/
+  footer{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  footer > div{
+    width: 48%;
+  }
+  footer .contacto{
+    margin: 0;
+  }
+  footer .contacto h3{
+    padding-left: 45px;
+  }
+  footer .informacion{
+    margin-left: 45px;
+  }
+  footer .informacion div{
+    margin-top: 20px;
+  }
+}
